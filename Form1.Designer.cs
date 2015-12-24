@@ -50,7 +50,7 @@ namespace SimpleSerial
             // buttonStop
             // 
             this.buttonStop.Enabled = false;
-            this.buttonStop.Location = new System.Drawing.Point(158, 18);
+            this.buttonStop.Location = new System.Drawing.Point(140, 20);
             this.buttonStop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(112, 35);
@@ -67,7 +67,7 @@ namespace SimpleSerial
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(621, 322);
+            this.textBox1.Size = new System.Drawing.Size(626, 356);
             this.textBox1.TabIndex = 2;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -78,7 +78,7 @@ namespace SimpleSerial
             // 
             // comPortInput
             // 
-            this.comPortInput.Location = new System.Drawing.Point(287, 20);
+            this.comPortInput.Location = new System.Drawing.Point(259, 24);
             this.comPortInput.Name = "comPortInput";
             this.comPortInput.Size = new System.Drawing.Size(147, 26);
             this.comPortInput.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace SimpleSerial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 409);
+            this.ClientSize = new System.Drawing.Size(669, 436);
             this.Controls.Add(this.comPortInput);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonStop);

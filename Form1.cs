@@ -71,8 +71,15 @@ namespace SimpleSerial
         private void DisplayText(object sender, EventArgs e)
         {
             String[]splitInput = RxString.Split('/');
+            var rawStroke = splitInput[1];
+            rawStroke = rawStroke.Replace("SeCe", "S-");
+            rawStroke = rawStroke.Replace("Te", "T-");
+            rawStroke = rawStroke.Replace("Pe", "P-");
+            rawStroke = rawStroke.Replace("He", "H-");
 
-            textBox1.AppendText(splitInput[1] + "\n");
+            //Hardcoded dictionary entry test...
+            if (rawStroke == "S-T-P-H-") rawStroke = "\n";
+            textBox1.AppendText(rawStroke);
         }
 
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
