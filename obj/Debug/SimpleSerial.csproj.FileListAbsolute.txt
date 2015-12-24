@@ -1,0 +1,10 @@
+C:\Users\Pat Berry\Downloads\SimpleSerial\obj\Debug\SimpleSerial.exe
+C:\Users\Pat Berry\Downloads\SimpleSerial\obj\Debug\SimpleSerial.pdb
+C:\Users\Pat Berry\Downloads\SimpleSerial\bin\Debug\SimpleSerial.exe
+C:\Users\Pat Berry\Downloads\SimpleSerial\bin\Debug\SimpleSerial.pdb
+C:\Users\Pat Berry\Downloads\SimpleSerial\obj\Debug\SimpleSerial.csprojResolveAssemblyReference.cache
+C:\Users\Pat Berry\Downloads\SimpleSerial\obj\Debug\SimpleSerial.Form1.resources
+C:\Users\Pat Berry\Downloads\SimpleSerial\obj\Debug\SimpleSerial.Properties.Resources.resources
+C:\Users\Pat Berry\Downloads\SimpleSerial\obj\Debug\SimpleSerial.csproj.GenerateResource.Cache
+C:\Users\Pat Berry\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SimpleSerial.exe
+C:\Users\Pat Berry\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SimpleSerial.pdb
