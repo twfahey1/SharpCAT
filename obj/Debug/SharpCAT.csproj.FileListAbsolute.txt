@@ -15,3 +15,4 @@ C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\Simpl
 C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SimpleSerial.Properties.Resources.resources
 C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SharpCAT.csproj.GenerateResource.Cache
 C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\bin\Debug\SharpCAT.exe.config
+C:\Users\Pat Berry\Documents\Visual Studio 2015\Projects\SharpCAT\bin\Debug\SharpCAT.exe.config
