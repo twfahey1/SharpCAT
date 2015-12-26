@@ -22,5 +22,29 @@ namespace SimpleSerial.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string lastComPort {
+            get {
+                return ((string)(this["lastComPort"]));
+            }
+            set {
+                this["lastComPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string lastBaudRate {
+            get {
+                return ((string)(this["lastBaudRate"]));
+            }
+            set {
+                this["lastBaudRate"] = value;
+            }
+        }
     }
 }

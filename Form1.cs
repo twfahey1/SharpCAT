@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO.Ports;
+using System.IO;
 
 namespace SimpleSerial
 {
@@ -13,6 +15,9 @@ namespace SimpleSerial
         // Add this variable 
         string RxString;
 
+        bool realtimeStarted = false;
+
+
         public Form1()
         {
             InitializeComponent();
@@ -20,27 +25,47 @@ namespace SimpleSerial
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            serialPort1.PortName = comPortInput.Text;
-            serialPort1.BaudRate = 115200;
-
-            serialPort1.Open();
-            if (serialPort1.IsOpen)
+            if (!realtimeStarted)
             {
-                buttonStart.Enabled = false;
-                buttonStop.Enabled = true;
-                textBox1.ReadOnly = false;
+                if (portComboBox.Text == "Available Ports")
+                {
+                    MessageBox.Show("Select a valid COM port for writer.");
+                    return;
+                }
+
+                portComboBox.Enabled = false;
+                baudRateCombo.Enabled = false;
+                this.buttonStart.Text = "Stop";
+
+                
+                serialPort1.PortName = portComboBox.Text;
+                serialPort1.BaudRate = Int32.Parse(baudRateCombo.Text);
+                serialPort1.Open();
+
+                if (serialPort1.IsOpen)
+                {                    
+                    textBox1.ReadOnly = false;
+                }
+
+                realtimeStarted = true;
+            }           
+
+            else
+            {
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Close();
+                    textBox1.ReadOnly = true;
+                }
+                realtimeStarted = false;
+                buttonStart.Text = "Start";
             }
+            
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
-            {
-                serialPort1.Close();
-                buttonStart.Enabled = true;
-                buttonStop.Enabled = false;
-                textBox1.ReadOnly = true;
-            }
+            
 
         }
 
@@ -77,8 +102,30 @@ namespace SimpleSerial
             rawStroke = rawStroke.Replace("Pe", "P-");
             rawStroke = rawStroke.Replace("He", "H-");
 
+            rawStroke = rawStroke.Replace("Fe", "-F");
+            rawStroke = rawStroke.Replace("PeCe", "-P");
+            rawStroke = rawStroke.Replace("Le", "-L");
+            rawStroke = rawStroke.Replace("TeCe", "-T");
+            
+            rawStroke = rawStroke.Replace("Ke", "K-");
+            rawStroke = rawStroke.Replace("We", "W-");
+            rawStroke = rawStroke.Replace("Re", "R-");
+
+            rawStroke = rawStroke.Replace("ReCe", "-R");
+            rawStroke = rawStroke.Replace("Be", "-B");
+            rawStroke = rawStroke.Replace("Ge", "-G");
+            rawStroke = rawStroke.Replace("Se", "-S");
+
+            rawStroke = rawStroke.Replace("Ae", "A");
+            rawStroke = rawStroke.Replace("Oe", "O");
+            rawStroke = rawStroke.Replace("Ee", "E");
+            rawStroke = rawStroke.Replace("Ue", "U");
+
+
+
             //Hardcoded dictionary entry test...
             if (rawStroke == "S-T-P-H-") rawStroke = "\n";
+
             textBox1.AppendText(rawStroke);
         }
 
@@ -86,6 +133,67 @@ namespace SimpleSerial
         {
             RxString = serialPort1.ReadExisting();
             this.Invoke(new EventHandler(DisplayText));
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string[] availablePorts = SerialPort.GetPortNames();
+            foreach (string port in availablePorts)
+            {
+
+                portComboBox.Items.Add(port);
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+        }
+
+        private void sendDataBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Stream myStream = null;
+            OpenFileDialog theDialog = new OpenFileDialog();
+            theDialog.Title = "Open Text File";
+            theDialog.Filter = "TXT files|*.txt";
+            theDialog.InitialDirectory = @"C:\";
+            string line;
+            if (theDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((myStream = theDialog.OpenFile()) != null)
+                    {
+                        using (myStream)
+                        {
+                            System.IO.StreamReader file = new System.IO.StreamReader(myStream);
+                            while ((line = file.ReadLine()) != null)
+                            {
+                                textBox1.AppendText(line);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFile.FileName, textBox1.Text);
+            }
         }
     }
 }

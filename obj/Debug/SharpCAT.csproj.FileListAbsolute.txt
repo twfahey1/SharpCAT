@@ -6,3 +6,12 @@ C:\Users\Pat Berry\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\Simp
 C:\Users\Pat Berry\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SharpCAT.csproj.GenerateResource.Cache
 C:\Users\Pat Berry\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SharpCAT.exe
 C:\Users\Pat Berry\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SharpCAT.pdb
+C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SharpCAT.exe
+C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SharpCAT.pdb
+C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\bin\Debug\SharpCAT.exe
+C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\bin\Debug\SharpCAT.pdb
+C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SharpCAT.csprojResolveAssemblyReference.cache
+C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SimpleSerial.Form1.resources
+C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SimpleSerial.Properties.Resources.resources
+C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\obj\Debug\SharpCAT.csproj.GenerateResource.Cache
+C:\Users\twfahey1\Documents\Visual Studio 2015\Projects\SharpCAT\bin\Debug\SharpCAT.exe.config
